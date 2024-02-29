@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: ft_transcendence/frontend
+    container_name: ft_transcendence_frontend
+    build:
+      context: app/frontend/
+      dockerfile: Dockerfile
+    ports:
+      - ${FRONTEND_PORT}:443
+    networks:
+      - ft_transcendence_network
+    volumes:
+      - ./app/frontend/public:/home/ft_transcendence/public
+    environment:
+      BACKEND_URL: ${BACKEND_URL}
+
+  backend:
+    image: ft_transcendence/backend
+    container_name: ft_transcendence_backend
+    build:
+      context: app/backend/
+      dockerfile: Dockerfile
+    ports:
+      - ${BACKEND_PORT}:443
+    networks:
+      - ft_transcendence_network
+    volumes:
+      - ./app/backend/src:/home/ft_transcendence/src
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      FRONTEND_URL: ${FRONTEND_URL}
+      FRONTEND_IP: ${FRONTEND_IP}
+      BACKEND_API_URL: ${BACKEND_URL}
+      MEDIA_URL: ${MEDIA_URL}
+
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    container_name: ft_transcendence_db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
+    networks:
+      - ft_transcendence_network
+    volumes:
+      - ./app/db/data:/var/lib/postgresql/data/
+
+networks:
+  ft_transcendence_network:
+    driver: bridge
+    

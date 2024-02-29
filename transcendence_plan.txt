@@ -1,0 +1,23 @@
+django Major
+postgres minor
+bootstrap minor
+user managment Major
+42 auth major
+threejs major
+microservices ? major
+
+
+need to add option to add friends, maybe a button on their profile?
+Friends list needs to be added
+give option to see online status of friends
+show stats like w/l ratio?
+
+create tournaments: 
+	- what is a tournament going to look like?
+	- give tournament a name
+	- allow participants to set a nickname
+	- 
+
+	https://awstip.com/implementing-two-factor-authentication-2fa-with-django-and-django-rest-framework-drf-e945163b450a
+
+	ipconfig getifaddr en0 (use this to get ip address)
