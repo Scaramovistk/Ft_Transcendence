@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Transcendence frontend</title>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+		<style>
+		body {
+			position: relative;
+		}
+		.affix {
+			top: 0;
+			width: 100%;
+			z-index: 9999 !important;
+		}
+		.navbar {
+			margin-bottom: 0px;
+		}
+		.affix~.container-fluid {
+			position: relative;
+			top: 50px;
+		}
+</style>
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+		<header>
+			<div class="container-fluid"
+				style="background-color:#673ab7;color:#fff;height:200px; text-align:
+				center;">
+				<h1>This is THE PONG GAME</h1>
+				<h3>Enjoy while is available</h3>
+				<p>This is just a temporary paragraph</p>
+			</div>
+			<nav class="navbar navbar-dark navbar-expand-lg" data-offset-top="197">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="/">Navbar</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item"><a class="nav-link" href="#/pong_test_index" data-link>pong</a></li>
+							<li class="nav-item"><a class="nav-link" href="#/players/list" data-link>Player list</a></li>
+							<li class="nav-item"><a class="nav-link" href="#/players/search" data-link>Player search</a></li>
+							<li class="nav-item"><a class="nav-link" href="#/chat" data-link>chat</a></li>
+							<li class="nav-item"><a class="nav-link" href="#/profile/detail" data-link>profile</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tournament</a>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li class="nav-item"><a class="nav-link" href="#/tournament/search" data-link>Search</a></li>
+									<li class="nav-item"><a class="nav-link" href="#/tournament/create" data-link>Create</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+							<ul class="dropdown-menu dropdown-menu-end">
+								<li class="nav-item"><a id="logger" class="nav-link" href="#/login" data-link>Login</a></li>
+								<li class="nav-item"><a class="nav-link" href="#/register" data-link>Register</a></li>
+							</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+		</header>
+		<main>
+			<section id="app" class="pt-4"></section>
+		</main>
+		<script type="module" src="app.js"></script>
+	</body>
+</html>
