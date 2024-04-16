@@ -27,12 +27,17 @@ export async function isAuthenticated() {
   }
 }
 
-export function logout() {
+export async function logout() {
   const token = localStorage.getItem('access_token');
   if (token) {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-    window.location.href = '#/login';
+    const response = await Authenticate.logout();
+    if (response.ok) {
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('refresh_token');
+      window.location.href = '#/login';
+    } else {
+      window.location.href = '/';
+    }
   } else {
     window.location.href = '/';
   }

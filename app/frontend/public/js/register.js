@@ -20,7 +20,6 @@ function lol() {
 		const response = await Authenticate.register(user);
 		if (response.ok) { //https://developer.mozilla.org/en-US/docs/Web/API/Response
 			const django_response = await response.json();
-			console.log(django_response.qr_code);
 			localStorage.setItem('qr_code', django_response.qr_code);
 			window.location.href = '#/successful_registration';
 			return ;

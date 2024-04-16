@@ -1,13 +1,10 @@
 export default {
-  SUPERVISOR_GROUP_NAME: "env",
-  HOSTNAME: "04bac358bb77",
+  HOSTNAME: "4e569ff947c6",
   PWD: "/home/ft_transcendence",
   HOME: "/root",
-  BACKEND_URL: "https://10.3.8.3:5000",
-  SHLVL: "0",
-  LC_CTYPE: "C.UTF-8",
-  SUPERVISOR_PROCESS_NAME: "env",
+  WSS_BACKEND_URL: "wss://10.1.6.4:5000",
+  BACKEND_URL: "https://10.1.6.4:5000",
+  SHLVL: "1",
   PATH: "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-  SUPERVISOR_ENABLED: "1",
   _: "/usr/bin/printenv",
 }

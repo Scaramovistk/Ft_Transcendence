@@ -1,5 +1,6 @@
 import PlayersService from "./players.service.js";
 import { getRouteParams } from './router/routeParams.js';
+import { setMatchStatsandHistory } from "./detail.js";
 
 async function init() {
 	const id = getRouteParams().id;
@@ -9,7 +10,7 @@ async function init() {
 	  return;
 	}
 	const player = await response.json();
-  
+
 	const avatar = document.getElementById('player_avatar');
 	const username = document.getElementById('player_username');
 	const bio = document.getElementById('player_bio');
@@ -17,7 +18,10 @@ async function init() {
 	avatar.src = player.avatar || 'https://www.gravatar.com/avatar/';
 	username.innerHTML = player.username;
 	bio.innerHTML = player.bio;
-  }
+
+	setMatchStatsandHistory(player.match_history);
+}
+
   
   init();
 

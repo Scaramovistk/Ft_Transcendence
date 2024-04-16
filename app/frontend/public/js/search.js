@@ -42,7 +42,7 @@ async function search() {
   		table.appendChild(thead);
   		const tr = document.createElement('tr');
   		thead.appendChild(tr);
-  		const headers = ['Avatar', 'Username', 'Points', 'Actions'];
+  		const headers = ['Avatar', 'Username', 'Online status', 'Actions'];
   		headers.forEach(header => {
     		const th = document.createElement('th');
     		tr.appendChild(th);
@@ -90,7 +90,11 @@ async function search() {
     		// Player points
     		const tdPoints = document.createElement('td');
     		tr.appendChild(tdPoints);
-    		tdPoints.textContent = 0; // TODO: Add the points
+    		if (player.login_otp_used) {
+				tdPoints.textContent = 'online';
+			} else {
+				tdPoints.textContent = 'offline';
+			}
 
     		// Player actions
     		const tdActions = document.createElement('td');

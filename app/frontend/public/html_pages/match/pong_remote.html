@@ -1,0 +1,32 @@
+<div id="pong_remote" class="container">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/pong_remote.css">
+
+    <div class="pong-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <div class="pong-container">
+            <div class="row custom-row">
+                <div class="col left-align" id="leftName"></div>
+                <div class="col right-align" id="rightName"></div>
+            </div>
+            <div class="row custom-row" id="scoreBoard">
+                <div class="col right-align" id="leftScore"></div>
+                <div class="col left-align " id="rightScore"></div>
+            </div>
+
+        <div class="modal" id="menu" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="menu-title" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" id="menu-header">
+                        <h5 class="modal-title" id="menu-title"></h5>
+                    </div>
+                    <div class="modal-body" id="menu-body"></div>
+                    <div class="modal-footer" id="menu-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

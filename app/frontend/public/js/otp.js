@@ -10,7 +10,6 @@ function lol() {
 		const errormsg = document.getElementById('invalid-form');
 		const formdata = new FormData(form);
 		const jsondata = Object.fromEntries(formdata.entries());
-		console.log(jsondata.otp);
 		const user = {
 			id: localStorage.getItem('id'),
 			otp: jsondata.otp,

@@ -23,7 +23,7 @@ async function searchTounaments() {
 	table.appendChild(thead);
 	const tr = document.createElement('tr');
 	thead.appendChild(tr);
-	const headers = ['Tournament Name', 'Players', 'Status', 'Actions'];
+	const headers = ['Tournament Name', 'Status', 'Actions'];
 	headers.forEach(header => {
 		const th = document.createElement('th');
 		tr.appendChild(th);
@@ -57,27 +57,21 @@ async function searchTounaments() {
 		tr.appendChild(tdTournament);
 		tdTournament.textContent = tournament.name.substring(0, 20);
 		
-		// Players in Tournament 
-		const tdPoints = document.createElement('td');
-		tr.appendChild(tdPoints);
-		tdPoints.textContent = tournament.player_qty + ' / ' + tournament.player_max;
-		
 		// Tournament Status
 		const tdStatus = document.createElement('td');
 		tr.appendChild(tdStatus);
-		tdStatus.textContent = tournament.status; // It dont get the correct status
+		tdStatus.textContent = tournament.status;
 		
 		// Tournament actions
 
 		const tdActions = document.createElement('td');
 		tdActions.className = 'text-end';
 		tr.appendChild(tdActions);
-		
-		// Acctions button
-		if (tournament.player_max == tournament.player_qty || tournament.status != 'not_started')
+
+		if (tournament.status != 'Not Started')
 		{
 			const aDetail = document.createElement('a');
-			aDetail.href = '#/tournaments/detail/' + tournament.id;
+			aDetail.href = '#/tournament/detail/' + tournament.id;
 			aDetail.className = 'btn btn-primary';
 			aDetail.textContent = 'Detail';
 			tdActions.appendChild(aDetail);
@@ -85,9 +79,9 @@ async function searchTounaments() {
 		else
 		{
 			const aDetail = document.createElement('a');
-			aDetail.href = '#/tournament/join/' + tournament.id;
+			aDetail.href = '#/tournament/start/' + tournament.id;
 			aDetail.className = 'btn btn-success';
-			aDetail.textContent = 'JOIN';
+			aDetail.textContent = 'START';
 			tdActions.appendChild(aDetail);
 		}
 	});

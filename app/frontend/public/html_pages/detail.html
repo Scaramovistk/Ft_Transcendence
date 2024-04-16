@@ -1,40 +1,64 @@
 <div id="profile-detail" class="container">
 	<div class="text-center">
-	  <h2>Profile</h2>
-	  <p>Profile information.</p>
-  
-	  <div class="col-lg-6 offset-lg-3">
-		<div class="card text-start">
-		  <div class="card-body">
-			<img id="profile_avatar" src="" alt="avatar" class="rounded-circle mx-auto d-block mb-3 img-thumbnail" width="100" height="100">
-			<ul class="card-text text-center list-unstyled">
-			  <li><span id="profile_username" class="fw-bold">username</span></li>
-			  <li><span id="profile_bio">bio</span></li>
-			</ul>
-			<div class="d-grid d-md-flex justify-content-md-center">
-			  <a href="#/profile/edit" class="btn btn-primary" role="button" data-link>Edit</a>
+		<h2>Profile</h2>
+		<p>Profile information.</p>
+		<div class="col-lg-6 offset-lg-3">
+			<div class="card text-start">
+				<div class="card-body">
+					<img id="profile_avatar" src="" alt="avatar"
+						class="rounded-circle mx-auto d-block mb-3 img-thumbnail" width="100" height="100">
+					<ul class="card-text text-center list-unstyled">
+						<li><span id="profile_username" class="fw-bold"></span></li>
+						<li><span id="profile_bio"></span></li>
+					</ul>
+					<div class="d-grid d-md-flex justify-content-md-center">
+						<a href="#/profile/edit" class="btn btn-primary" role="button" data-link>Edit</a>
+					</div>
+				</div>
 			</div>
-		  </div>
+			<div class="card mt-3" id="match_stats" style="display:none">
+				<div class="card-header py-2">
+					<h5 class="mb-0">Match stats</h5>
+				</div>
+				<div class="card-body">
+					<div class="col-md-12">
+						<table id="match_stats_table" class="table table-dark table-borderless">
+							<tbody>
+								<tr>
+									<th class="w-50" scope="row">Total</th>
+									<td class="w-50" id="total"></td>
+								</tr>
+								<tr id>
+									<th class="w-50" scope="row">Wins</th>
+									<td class="w-50" id="wins"></td>
+								</tr>
+								<tr id>
+									<th class="w-50" scope="row">Losses</th>
+									<td class="w-50" id="losses"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="card mt-3" id="match_history" style="display:none">
+				<div class="card-header py-2">
+					<h5 class="mb-0">Match history</h5>
+				</div>
+				<div class="card-body">
+					<table id="match_history_table" class="table table-striped table-hover text-start">
+						<thead>
+							<tr>
+								<th scope="col">Date</th>
+								<th scope="col">Opponent</th>
+								<th scope="col">Result</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
-  
-		<div class="card mt-3">
-		  <div class="card-header py-2">
-			<h5 class="mb-0">Match history</h5>
-		  </div>
-		  <div class="card-body">
-			<table id="match_history" class="table table-striped table-hover text-start">
-			  <thead>
-			  <tr>
-				<th scope="col">Date</th>
-				<th scope="col">Opponent</th>
-				<th scope="col">Result</th>
-			  </tr>
-			  </thead>
-			  <tbody>
-			  </tbody>
-			</table>
-		  </div>
-		</div>
-	  </div>
 	</div>
-  </div>
+</div>

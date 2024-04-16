@@ -1,0 +1,66 @@
+<div id="pong_local" class="container">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/pong_local.css">
+    <div class="pong-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    <div class="pong-container">
+            <div class="row custom-row">
+                <div class="col left-align" id="leftName"></div>
+                <div class="col right-align" id="rightName"></div>
+            </div>
+            <div class="row custom-row" id="scoreBoard">
+                <div class="col right-align" id="leftScore"></div>
+                <div class="col left-align " id="rightScore"></div>
+            </div>
+        <div class="row gx-5" id="forms">
+            <div class="col-16">
+                <div class="card text-start mt-3" id="cardPlayer1">
+                    <div class="card-body">
+                        <h5 class="card-title">Player</h5>
+                        <form class="mt-3" id="formPlayer1">
+                            <div class="mb-3">
+                                <label for="username1" class="form-label mb-1">Username</label>
+                                <input type="text" name="username" class="form-control" id="username1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password1" class="form-label mb-1">Password</label>
+                                <input type="password" name="password" class="form-control" id="password1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="invalid">
+                                <span id="invalid-form1" class="text-danger"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pong-container">
+            <div id="buttons" class="col-xs-6">
+                <button type="button" id="playButton" class="btn btn-light">Play</button>
+            </div>
+        </div>
+        <div class="pong-container">
+            <div id="end_score">
+                <div class="modal fade" data-bs-backdrop="static" id="endModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="endModalMessage"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row gx-5">
+                                    <div class="col-6">
+                                        <button type="button" id="rematchButton" class="btn btn-primary">Yes</button>
+                                        <button type="button" id="newGameButton" class="btn btn-primary">No</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

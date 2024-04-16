@@ -2,9 +2,19 @@ export default {
 	'/': {
 		page: 'html_pages/placeholder.html'
 	},
-	'#/pong_test_index': {
-		page: 'html_pages/pong_test_index.html',
-		script: 'js/pong/pong.js',
+	'#/pong/local': {
+		page: 'html_pages/match/pong_local.html',
+		script: 'js/match/pong_local.js',
+		auth: true
+	},
+	'#/pong/remote': {
+		page: 'html_pages/match/pong_remote.html',
+		script: 'js/match/pong_remote.js',
+		auth: true
+	},
+	'#/pong/ai': {
+		page: 'html_pages/match/pong_ai.html',
+		script: 'js/match/pong_ai.js',
 		auth: true
 	},
 	'#/login': {
@@ -22,10 +32,6 @@ export default {
 	'#/successful_registration': {
 		page: 'html_pages/successful_registration.html',
 		script: 'js/successful_registration.js',
-	},
-	'#/chat': {
-		page: 'html_pages/chat/chat.html',
-		script: 'js/chat/chat.js',
 	},
 	'#/players/detail/:id': {
 		page: 'html_pages/players.html',
@@ -72,13 +78,19 @@ export default {
 		script: 'js/tournament/search.js',
 		auth: true
 	},
-	'#/tournament/success': {
-		page: 'html_pages/tournament/success.html',
+	'#/tournament/start/:id': {
+		page: 'html_pages/tournament/start.html',
+		script: 'js/tournament/start.js',
 		auth: true
 	},
 	'#/tournament/join/:id': {
 		page: 'html_pages/tournament/join.html',
 		script: 'js/tournament/join.js',
+		auth: true
+	},
+	'#/tournament/detail/:id': {
+		page: 'html_pages/tournament/detail.html',
+		script: 'js/tournament/detail.js',
 		auth: true
 	},
 }

@@ -13,8 +13,10 @@ services:
       - ft_transcendence_network
     volumes:
       - ./app/frontend/public:/home/ft_transcendence/public
+    entrypoint: bash /home/ft_transcendence/entrypoint.sh
     environment:
-      BACKEND_URL: ${BACKEND_URL}
+      BACKEND_URL: ${BACKEND_URL}:${BACKEND_PORT}
+      WSS_BACKEND_URL: ${WSS_BACKEND_URL}:${BACKEND_PORT}
 
   backend:
     image: ft_transcendence/backend
@@ -28,34 +30,53 @@ services:
       - ft_transcendence_network
     volumes:
       - ./app/backend/src:/home/ft_transcendence/src
+    entrypoint: bash /home/ft_transcendence/entrypoint.sh
     environment:
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
-      FRONTEND_URL: ${FRONTEND_URL}
+      FRONTEND_URL: ${FRONTEND_URL}:${FRONTEND_PORT}
       FRONTEND_IP: ${FRONTEND_IP}
-      BACKEND_API_URL: ${BACKEND_URL}
-      MEDIA_URL: ${MEDIA_URL}
-
+      BACKEND_API_URL: ${BACKEND_URL}:${BACKEND_PORT}
+      MEDIA_URL: ${BACKEND_URL}:${BACKEND_PORT}/${MEDIA_DIR}/
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+  
   db:
     image: postgres:16
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     container_name: ft_transcendence_db
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
+      PGUSER: ${DB_USER}
     ports:
       - ${DB_PORT}:5432
     networks:
       - ft_transcendence_network
     volumes:
       - ./app/db/data:/var/lib/postgresql/data/
+  
+  redis:
+    image: redis:alpine
+    container_name: ft_transcendence_redis
+    expose:
+      - ${REDIS_PORT}
+    networks:
+      - ft_transcendence_network
 
 networks:
   ft_transcendence_network:
     driver: bridge
+
     

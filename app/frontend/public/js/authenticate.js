@@ -1,6 +1,6 @@
 import config from '../config.js'
 
-const AUTH_PATH = config.BACKEND_URL + "/auth/" //ENV_FILE?
+const AUTH_PATH = config.BACKEND_URL + "/auth/"
 
 export default class Authenticate { //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
@@ -11,6 +11,15 @@ export default class Authenticate { //https://developer.mozilla.org/en-US/docs/W
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(user),
+		});
+	}
+
+	static async logout(user) {
+		return await fetch(AUTH_PATH + "logout", {
+			method: "POST",
+			headers: {
+				'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
+			},
 		});
 	}
 

@@ -34,23 +34,26 @@
 			<div class="container-fluid"
 				style="background-color:#673ab7;color:#fff;height:200px; text-align:
 				center;">
-				<h1>This is THE PONG GAME</h1>
-				<h3>Enjoy while is available</h3>
+				<h1>This is A PONG GAME</h1>
+				<h3>Enjoy while it is available</h3>
 				<p>This is just a temporary paragraph</p>
 			</div>
-			<nav class="navbar navbar-dark navbar-expand-lg" data-offset-top="197">
+			<nav class="navbar navbar-dark navbar-expand-lg" id=navbar data-offset-top="197">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="/">Navbar</a>
+					<a class="navbar-brand" href="/">Transcendence</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
-							<li class="nav-item"><a class="nav-link" href="#/pong_test_index" data-link>pong</a></li>
-							<li class="nav-item"><a class="nav-link" href="#/players/list" data-link>Player list</a></li>
-							<li class="nav-item"><a class="nav-link" href="#/players/search" data-link>Player search</a></li>
-							<li class="nav-item"><a class="nav-link" href="#/chat" data-link>chat</a></li>
-							<li class="nav-item"><a class="nav-link" href="#/profile/detail" data-link>profile</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Match</a>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li class="nav-item"><a class="nav-link" href="#/pong/local" data-link>Local</a></li>
+									<li class="nav-item"><a class="nav-link" href="#/pong/remote" data-link>Remote</a></li>
+									<li class="nav-item"><a class="nav-link" href="#/pong/ai" data-link>AI</a></li>
+								</ul>
+							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tournament</a>
 								<ul class="dropdown-menu dropdown-menu-end">
@@ -59,10 +62,19 @@
 								</ul>
 							</li>
 							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Players</a>
+								<ul class="dropdown-menu dropdown-menu-end">
+									<li class="nav-item"><a class="nav-link" href="#/players/list" data-link>List</a></li>
+									<li class="nav-item"><a class="nav-link" href="#/players/search" data-link>Search</a></li>
+								</ul>
+							</li>
+
+							<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
 							<ul class="dropdown-menu dropdown-menu-end">
 								<li class="nav-item"><a id="logger" class="nav-link" href="#/login" data-link>Login</a></li>
 								<li class="nav-item"><a class="nav-link" href="#/register" data-link>Register</a></li>
+								<li class="nav-item"><a class="nav-link" href="#/profile/detail" data-link>My profile</a></li>
 							</ul>
 							</li>
 						</ul>
